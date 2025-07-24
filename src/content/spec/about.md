@@ -1,4 +1,5 @@
 # About
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
+Check out the source code!
 
-::github{repo="saicaca/fuwari"}
+::github{repo="nicoxmcd/nicoxmcdportfolio"}
+::github{repo="nicoxmcd/cloud"}
