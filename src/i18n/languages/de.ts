@@ -5,6 +5,7 @@ export const de: Translation = {
 	[Key.home]: "Startseite",
 	[Key.about]: "Über mich",
 	[Key.experience]: "Erfahrung",
+	[Key.skills]: "Fähigkeiten",
 	[Key.archive]: "Archiv",
 	[Key.search]: "Suche",
 

@@ -7,7 +7,7 @@ In short, I got started in engineering in high school. At the time I wanted to b
 
 And I stayed there and argued with the program teacher saying that I will *make time*. 
 
-**Surprisingly**, I ended up finishing the entire program within 3 months. Both the Robotics and Girls Who Code teachers saw how passionate I was about solving problems and how much I loved programming. I was asked to be the Lead Programmer for our [First Robotics Competition](https://www.firstinspires.org/robotics/frc) [Team 2070](https://sites.google.com/view/team2070). At first I leaned more towards Computer Science and Cyber Security; but eventually as I was doing the electrical work as one of the team captains, I wanted to pivot to Computer Engineering.
+**Surprisingly**, I ended up finishing the entire program within 3 months. Both the Robotics and Girls Who Code teachers saw how passionate I was about solving problems and how much I loved programming. I was the Lead Programmer for our [First Robotics Competition](https://www.firstinspires.org/robotics/frc) [Team 2070](https://sites.google.com/view/team2070). As I was doing the electrical work alongside programming in Java, I wanted to pivot to Computer Engineering.
 
 To this day I appreciate them both for giving me so many opportunities and encouraging me to pursue engineering. I started in engineering because I wanted to prove that *I could do it* and I *stayed* because I loved coming up with creative solutions. 
 
