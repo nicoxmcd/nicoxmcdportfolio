@@ -28,7 +28,7 @@
 :::
 
 # Education
-:::info[[Stevens Institute of Technology, Hoboken, NJ](https://www.stevens.edu/)]
+:::tip[[Stevens Institute of Technology, Hoboken, NJ](https://www.stevens.edu/)]
 *B.E. Computer Engineering, Network Security, with Honors*\
 **Fall 2020 - Spring 2025**
 - **Dean's List**: Spring 2024, Fall 2024, Spring 2025
