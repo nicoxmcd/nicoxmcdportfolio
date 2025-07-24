@@ -3,6 +3,7 @@ import type I18nKey from "./i18nKey";
 import { en } from "./languages/en";
 import { es } from "./languages/es";
 import { ko } from "./languages/ko";
+import { de } from  "./languages/de";
 
 export type Translation = {
 	[K in I18nKey]: string;
@@ -18,6 +19,7 @@ const map: { [key: string]: Translation } = {
 	en_au: en,
 	ko: ko,
 	ko_kr: ko,
+	de: de,
 };
 
 export function getTranslation(lang: string): Translation {
