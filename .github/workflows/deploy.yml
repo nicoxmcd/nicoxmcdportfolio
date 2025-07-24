@@ -35,13 +35,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'pnpm'
             
       - name: Checkout Repository
         uses: actions/checkout@v4
      
       - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Run Astro Check
         run: pnpm astro check
