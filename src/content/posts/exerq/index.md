@@ -2,7 +2,7 @@
 title: ExerQ (Web App for AI Generated Exercise Routines)
 published: 2025-05-10
 description: "Utilizing many AWS services such as Amplify, API Gateway, Lambda, DynamoDB, and Bedrock."
-image: "./cover.jpg"
+image: "./exerq.png"
 tags: ["Project", "AWS"]
 category: Projects
 draft: false
