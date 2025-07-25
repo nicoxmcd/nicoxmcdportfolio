@@ -2,7 +2,7 @@
 title: Tackling the AWS Cloud Practitioner Exam
 published: 2025-06-15
 description: "My process on how I went about preparing and studying for the Cloud Practitioner Exam."
-image: ""
+image: "./cover.png"
 tags: ["Certification", "AWS", "Cloud Challenge"]
 category: Tips
 draft: false

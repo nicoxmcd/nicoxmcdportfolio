@@ -24,8 +24,6 @@ The nicoxmcdportfolio repository holds the source code for this site and my Clou
 
 ::github{repo="nicoxmcd/nicoxmcdportfolio"}
 
-:::note
-:::
 ::github{repo="nicoxmcd/cloud"}
 
 > Rejoice in hope, be patient in tribulation, be constant in prayer. Romans 12:12
