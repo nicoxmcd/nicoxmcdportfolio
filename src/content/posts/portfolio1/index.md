@@ -37,10 +37,22 @@ I chose to go with **Terraform** instead of CloudFormation for a couple of diffe
 
 The learning curve was a bit difficult, I went with no experience in Terraform, but by the end I was able to debug and adjust as necessary. 
 
+---
 I keep my IaC in my Cloud repository:
 ::github{repo="nicoxmcd/cloud"}
 
----
+`backend.tf` basically supplies terraform with information to access the state file. That way I don't have to import each resource individually and it also prevents duplication and other potential issues (all of which I've run into)!
+```hcl
+terraform {
+  backend "s3" {
+    bucket         = "nicoxmcdportfolio-tfstate"
+    key            = "terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-locks"
+    encrypt        = true
+  }
+}
+```
 
 `terraform.tfvars` sets up the project's input variable values: `domain_name` and `bucket_name` that way I can reuse this across environments.
 ```hcl
@@ -338,7 +350,7 @@ resource "aws_acm_certificate_validation" "cert_validation" {
 
 
 ## Automation and CI/CD
-The first issues I had when deploying the infrastructure was originally not maintaining a state file or importing the resources. Terraform would recreate each resource every time you ran the workflow. It was resolved by importing the specific resources, that way Terraform would recognize that those resources do not need to be created, just updated.
+The first issues I had when deploying the infrastructure was originally not maintaining a state file or importing the resources. Terraform would recreate each resource every time you ran the workflow. It was resolved by importing the specific resources, that way Terraform would recognize that those resources do not need to be created, just updated. I went back and implemented a state file by manually creating a new S3 bucket `nicoxmcdportfolio-tfstate` and a DynamoDB table for locking `terraform-locks`.
 
 
 ### Frontend
@@ -406,7 +418,7 @@ The infrastructure is deployed directly from the Cloud repository via a workflow
 
 ![GitHub Workflow dispatch](./terraform.png)
 
-`terraform.yml` configures OpenID Connection (OIDC) to AWS which allows the repository to update resources in AWS using a predefined role. We initialize the Terraform project, I then import each of the resources individually (I plan to add a state file! Don't worry!), I then set up the Terraform plan. From there, if Terraform Plan Only is `False`, then it will apply the plan and invalidate the CloudFront cache.
+`terraform.yml` configures OpenID Connection (OIDC) to AWS which allows the repository to update resources in AWS using a predefined role. We initialize the Terraform project, I then set up the Terraform plan. From there, if Terraform Plan Only is `False`, then it will apply the plan and invalidate the CloudFront cache.
 ```yml
 name: Deploy Terraform
 run-name: Deploy ${{ inputs.project }} with ${{ inputs.resource }} resource(s)
@@ -457,15 +469,6 @@ jobs:
     - name: Terraform Init
       run: terraform init
 
-    - name: Terraform Import
-      run: |
-        terraform import aws_s3_bucket.portfolio nicoxmcdportfolio
-        terraform import aws_route53_zone.main Z06077682QPQ47SHNGLDN
-        terraform import aws_route53_record.www_a "Z06077682QPQ47SHNGLDN_www.nicoxmcd.com._A"
-        terraform import aws_route53_record.apex_redirect "Z06077682QPQ47SHNGLDN_nicoxmcd.com._A"
-        terraform import aws_acm_certificate.cert arn:aws:acm:us-east-1:886436941448:certificate/6d2bdc4e-7009-4fd4-a7e8-f4761565114f
-        terraform import aws_cloudfront_distribution.cdn E2XW953XY0MSBC
-
     - name: Terraform Plan
       run: |
         terraform plan
@@ -487,5 +490,5 @@ jobs:
 ::github{repo="nicoxmcd/cloud"}
 
 :::note[Reflection]
-I plan to add a Terraform state file step to upload to a separate S3 bucket that is locked via DynamoDB.
+Later on, I want to continue using the one terraform.yml workflow for all my project, so I want to use configuration as code with JSON or YAml to define the CloudFront distribution instead of hard coding it into the workflow
 ::::
