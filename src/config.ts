@@ -65,14 +65,14 @@ export const profileConfig: ProfileConfig = {
 			url: "https://www.linkedin.com/in/nicolexmcdermott/",
 		},
 		{
-			name: "Email",
-			icon: "fa6-regular:envelope",
-			url: "mailto:nicolexmcdermott@proton.me",
-		},
-		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
 			url: "https://github.com/nicoxmcd",
+		},
+		{
+			name: "Email",
+			icon: "fa6-regular:envelope",
+			url: "mailto:nicolexmcdermott@proton.me",
 		},
 	],
 };
