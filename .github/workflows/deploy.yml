@@ -47,6 +47,12 @@ jobs:
     
       - name: Run Astro Build
         run: pnpm astro build
+
+      - name: Check
+        run: |
+          ls
+          cd dist/
+          ls
           
       - name: Deploy to S3
         run: |
