@@ -52,6 +52,7 @@ jobs:
         run: |
           ls
           cd dist/
+          echo "dist folder!!!"
           ls
           
       - name: Deploy to S3
