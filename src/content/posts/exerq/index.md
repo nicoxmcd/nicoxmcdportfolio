@@ -8,8 +8,6 @@ category: Projects
 draft: false
 ---
 
-![Demonstration](./demo.gif)
-
 > Check out the project here: [ExerQ](https://main.d3iv8nh98y2vwl.amplifyapp.com/)
 
 ## Abtract
@@ -18,6 +16,8 @@ This project delivers a responsive workout routine tool using DevOps and CI/CD p
 Automated pipelines ensure fast updates to the frontend and backend, while cloud deployment supports high availability. A dynamic exercise database and user accounts enable tailored routines and saved favorites.
 
 By applying modern DevOps practices, the project streamlines development and ensures a smooth, user-friendly experience.
+
+![Demonstration](./demo.gif)
 
 ## Tool Analysis
 We used GitHub Automation to manage deployment and build our CI/CD pipelines. It worked well overall, though we encountered one issue where a deployment appeared successful on GitHub but triggered an error in AWS Amplify. With some team troubleshooting, we resolved it quickly.
@@ -182,6 +182,6 @@ This was my first AWS project ever, I was a complete beginner. Though I accompli
 Some things that I would have liked to do with more time:
 - Clean up the UI
 - Add optional user inputs such as equipment or style of exercises (pilates, calisthenics, powerlifting, etc.)
-- Addd a page for users to explore previously generated routines which would use our DynamoDB database to maintain
+- Add a page for users to explore previously generated routines which would use our DynamoDB database to maintain
 - Use infrastructure as code (IaC) to build and maintain the web app
 :::

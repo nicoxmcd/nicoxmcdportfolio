@@ -12,18 +12,19 @@ draft: false
 
 > *The name of the game is quick time to market and to fail fast.*
 
-## Takeaways
-Some important things that I got out of it
+## My Takeaways
 - ⬆️ Identify your bottleneck and do work to improve that, because any work that's done to improve the system that ISN'T the bottleneck is just an illusion. Bottlenecks decrease throughput! 
 - 💸 IT supports revenue generation in the business, it's not just there to fix broken things, it's there to also help achieve business goals.
 - 🤖 Automate wherever possible to decrease risk and increase speed.
 - ♻️ WIP is dangerous, too much work in progress can lead to too much context switching and causes delays and confusion.
 - 📈 Lean mindset: eliminate waste, experiment, and optimize.
-- ❗️ There's a big difference between being aware of potential risks and finding ways and countermeasures to mitigate them
-- ❌ Until the code is in production, no value is actually being generated; meaning big projects that aren't being regularly shipped in smaller increments are not operating at their full value
-- 🏃🏻‍♀️ Failing quickly allows you to learn quickly
-- ⛓️ Understand overall business goals and create value chains
+- ❗️ There's a big difference between being aware of potential risks and finding ways and countermeasures to mitigate them.
+- ❌ Until the code is in production, no value is actually being generated; meaning big projects that aren't being regularly shipped in smaller increments are not operating at their full value.
+- 🏃🏻‍♀️ Failing quickly allows you to learn quickly.
+- ⛓️ Understand overall business goals and create value chains.
 
+
+### My Favorite Quote
 > *Don't be that idiot that fails because he didn't ask for help*
 
 ## The Three Ways (Core Principles)

@@ -1,22 +1,18 @@
 ---
-title: AWS Cloud Resume Challenge
+title: Cloud Challenge - Part 1
 published: 2025-07-24
 description: "Project description for https://nicoxmcd.com"
 image: "./AWSCompleteDiagram.png"
-tags: ["Project", "AWS"]
+tags: ["Project", "AWS", "Cloud Challenge"]
 category: Projects
 draft: false
 ---
 
-> It's this website: [Home](https://nicoxmcd.com)
-
-This project is by no means complete, but adding these reflection question to answer them as I go
+> It's *this* website: [Home](https://nicoxmcd.com)
 
 ## Reflection
 **Chunk 1** Building the front end
 1. What are the top 2-3 areas of cloud that I feel least comfortable with right now?
-2. What was my study routine like for the CPP?
-3. What other areas of DevOps or software development do I want to get better at outside of cloud certification?
 
 **Chunk 2** Building the API
 1. What aspect of Chunk 2's work did I find the most difficult?
