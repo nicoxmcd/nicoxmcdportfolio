@@ -54,6 +54,9 @@ jobs:
           cd dist/
           echo "dist folder!!!"
           ls
+          echo "pagefinder folder!!!"
+          cd pagefinder/
+          ls
           
       - name: Deploy to S3
         run: |
