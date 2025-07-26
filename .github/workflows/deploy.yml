@@ -48,15 +48,15 @@ jobs:
       - name: Run Astro Build
         run: pnpm build
 
-      - name: Check
-        run: |
-          ls
-          cd dist/
-          echo "dist folder!!!"
-          ls
-          echo "pagefinder folder!!!"
-          cd pagefind/
-          ls
+      # - name: Check
+      #   run: |
+      #     ls
+      #     cd dist/
+      #     echo "dist folder!!!"
+      #     ls
+      #     echo "pagefinder folder!!!"
+      #     cd pagefind/
+      #     ls
           
       - name: Deploy to S3
         run: |
