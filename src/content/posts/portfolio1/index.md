@@ -24,7 +24,7 @@ I also decided not to re-invent the wheel, which is why I went with a pre-made t
 
 Some changes I made to the website was adding more pages which involved creating new astro source files that utilize the prebuilt layouts and components. By doing so, I also had to update multiple config.ts files to allow the navigation bar to navigate between the extra files. 
 
-Some thing I plan to add is adding a language option. I currently have English, Spanish, Korean, and German as my four language options in the source files, but I need to create functions and UI to allow the user to pick. Also I spent probably five hours trying to figure out how to fix the search functionality with PageFind and apparently it just doesn't work on Arc (which is the browser I use), but it *does* work on Edge and Google. *sigh* Always test other browsers if you're using an obscure one like I am.
+Some thing I plan to add is adding a language option. I currently have English, Spanish, Korean, and German as my four language options in the source files, but I need to create functions and UI to allow the user to pick. 
 
 
 ## Infrastructure as Code
