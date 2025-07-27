@@ -147,7 +147,7 @@ async function fetchViewCount() {
 
     const counter = document.getElementById("view-counter");
     if (counter) {
-      counter.textContent = `${data.body} views`;
+      counter.textContent = `${data.views} views`;
     }
   } catch (e) {
     console.error("Error fetching view count:", e);
