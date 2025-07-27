@@ -42,21 +42,16 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --no-frozen-lockfile
 
+      - name: Add API URL
+        run: |
+          API_URL=${{ secrets.API_URL }}
+          sed -i "s|__VIEW_COUNTER_URL__|$API_URL|g" src/components/Navbar.astro
+
       - name: Run Astro Check
         run: pnpm astro check
     
       - name: Run Astro Build
         run: pnpm build
-
-      # - name: Check
-      #   run: |
-      #     ls
-      #     cd dist/
-      #     echo "dist folder!!!"
-      #     ls
-      #     echo "pagefinder folder!!!"
-      #     cd pagefind/
-      #     ls
           
       - name: Deploy to S3
         run: |

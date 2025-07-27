@@ -141,16 +141,22 @@ if (document.readyState === 'loading') {
 
 <script>
 async function fetchViewCount() {
-    try {
-        const response = await fetch("https://<your-api-id>.execute-api.us-east-1.amazonaws.com/");
-        const data = await response.json(); 
-        
-        document.getElementById("view-counter").textContent = `${data.body} views`;
+  try {
+    const response = await fetch("__VIEW_COUNTER_URL__");
+    const data = await response.json();
 
-    } catch (e) {
-        console.error("Error fetching view count:", e);
+    const counter = document.getElementById("view-counter");
+    if (counter) {
+      counter.textContent = `${data.body} views`;
     }
+  } catch (e) {
+    console.error("Error fetching view count:", e);
+  }
 }
 
-fetchViewCount();
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", fetchViewCount);
+} else {
+  fetchViewCount();
+}
 </script>
