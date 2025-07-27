@@ -109,7 +109,7 @@ That way, it's not stored in the Terraform state tf and therefore wouldn't be ch
 
 **Eventually**, I would like to make this an automated process. I want each blog post to have their own ID in the table, so I would need to make a script to do this.
 
-`lambda.tf` also sests up a role that allows lambda to interact with DynamoDB, this is necessary because OIDC only provides permission for my GitHub repositories to interact with AWS resources. For those resources to interact *with each other* is a different story and needs its own role. 
+`lambda.tf` also sets up a role that allows lambda to interact with DynamoDB, this is necessary because OIDC only provides permission for my GitHub repositories to interact with AWS resources. For those resources to interact *with each other* is a different story and needs its own role. 
 
 I also zip the python script for updating the view counter, I found it easier to do it here, than in the workflow.
 ```
@@ -223,7 +223,7 @@ if (document.readyState === "loading") {
 ```
 
 ### Some Solved Issues:
-- Injecting the API URL so it would **not** be directly in my GitHub, to accomplish this, I added it as `API_URL` in GitHub secrets and referenced it when building the project in the deploy script.
+- Injecting the API URL so it would **not** be directly in my GitHub repository, to accomplish this, I added it as `API_URL` in GitHub secrets and referenced it when building the project in the deploy script.
 ```
 - name: Add API URL
     run: |
@@ -242,7 +242,7 @@ if (document.readyState === "loading") {
 So, the total rundown of this section is that I finally implemented the visitor counter! I successfully configured the API to communicate from the backend to the frontend. This is a great step forward and I'm excited for what's next.
 
 ## Reflection
-I found the Javascript the toughest, Javascript is not my strong suit. I think another part that *still* frustrates me is that I haven't automated the initial item yet, so I want to go back and fix that up. 
+I found the Javascript the toughest, Javascript is not my strong suit. I think another part that *still* frustrates me is that I haven't automated the initial item in the database yet, so I want to go back and fix that up. 
 
 For this section, I really like the mod ideas, I want to add a portion to make sure the only unique visitors will be counted as a new visitor. I also noticed that when going to different pages, that because it using the navigation bar component, the visitor counter will update too. So if you explore the website after a while, you'll have contributed 10+ views. (*Thank you, but I should really fix that!*)
 
