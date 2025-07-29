@@ -154,7 +154,8 @@ async function fetchViewCount() {
   }
 }
 
-if (document.readyState === "loading" && document.URL != "https://nicoxmcd.com/") {
+
+if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", fetchViewCount);
 } else {
   fetchViewCount();
