@@ -1,9 +1,9 @@
 ---
-title: Cloud Challenge - Visitor Counter API & Infrastructure
+title: Cloud Resume Challenge - Visitor Counter API & Infrastructure
 published: 2025-07-27
 description: "Describing the second half of the AWS Cloud Resume Challenge and explaining how I implemented the visitor counter."
 image: "./AWSCompleteDiagram.png"
-tags: ["Project", "AWS", "Cloud Challenge"]
+tags: ["Project", "AWS", "Cloud Resume Challenge"]
 category: Projects
 draft: false
 ---

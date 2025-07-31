@@ -1,9 +1,9 @@
 ---
-title: Cloud Challenge - Infrastructure & Frontend
+title: Cloud Resume Challenge - Infrastructure & Frontend
 published: 2025-07-24
 description: "Describing my experience thus far in the AWS Cloud Resume Challenge, also describing how I created the infrastructure using IaC with Terraform."
 image: "./AWSCompleteDiagram.png"
-tags: ["Project", "AWS", "Cloud Challenge"]
+tags: ["Project", "AWS", "Cloud Resume Challenge"]
 category: Projects
 draft: false
 ---
