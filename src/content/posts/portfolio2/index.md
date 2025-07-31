@@ -25,7 +25,7 @@ The main idea behind this section of the Cloud challenge was implementing a visi
 Since the last past, I've added a couple more resources.
 
 `api.tf` routes calls and specifies what's allowed, allowing the site to fetch from lambda. 
-```
+```hcl
 resource "aws_apigatewayv2_api" "api" {
   name          = "nicoxmcdportfolio-api"
   protocol_type = "HTTP"
@@ -71,7 +71,7 @@ resource "aws_apigatewayv2_stage" "default_stage" {
 ```
 
 `db.tf` sets up the DynamoDB table with its attributes.
-```
+```hcl
 resource "aws_dynamodb_table" "db" {
   name           = "nicoxmcdportfolio-views"
   billing_mode   = "PAY_PER_REQUEST"
@@ -89,7 +89,7 @@ resource "aws_dynamodb_table" "db" {
 ```
 ### Another Problem Solved
 Originally I had the initial item `nicoxmcdportfolio-views' set to 0.
-```
+```hcl
 resource "aws_dynamodb_table_item" "initial_view_count" {
   table_name = aws_dynamodb_table.db.name
   hash_key   = "ID"
@@ -100,7 +100,7 @@ resource "aws_dynamodb_table_item" "initial_view_count" {
 }
 ```
 However, whenever I would make updates to the infrastructure, this number would reset to 0. *Which is not ideal.* So, I decided to make the initial value manually through the AWS CLI instead. 
-```
+```bash
 aws dynamodb put-item \
   --table-name nicoxmcdportfolio-views \
   --item '{"ID": {"S": "nicoxmcdportfolio"}, "views": {"N": "0"}}'
@@ -112,7 +112,7 @@ That way, it's not stored in the Terraform state tf and therefore wouldn't be ch
 `lambda.tf` also sets up a role that allows lambda to interact with DynamoDB, this is necessary because OIDC only provides permission for my GitHub repositories to interact with AWS resources. For those resources to interact *with each other* is a different story and needs its own role. 
 
 I also zip the python script for updating the view counter, I found it easier to do it here, than in the workflow.
-```
+```hcl
 resource "aws_iam_role" "lambda_exec_role" {
   name = "lambda_exec_role"
 
@@ -157,7 +157,7 @@ resource "aws_lambda_function" "view_counter" {
 ```
 `view-counter.py` contains the functions code that gets uploaded to Lambda. The script grabs the views value from the ID `nicoxmcdportfolio` and increments it by one and stores the updated value back in the table. If this is successful, it returns a `StatusCode: 200` and the view count.
 
-```
+```python
 import boto3
 import json
 import os
@@ -188,7 +188,7 @@ def lambda_handler(event, context):
 
 ## Frontend
 I decided to edit the `Home` button in the navigation bar to be the view-counter. I replaced the original icon and added a `<span id="view-counter"></span>` inside the original button. With the `view-counter` id, I can easily update the value to represent the number of views.
-```
+```html
 <a href={url('/')} class="btn-plain scale-animation rounded-lg h-[3.25rem] px-5 font-bold active:scale-95"> <!-- home button that I wanna replace -->
     <div class="flex flex-row text-[var(--primary)] items-center text-md">
         <Icon name="fa6-regular:eye" class="text-[1.75rem] mb-1 mr-2" />
@@ -198,7 +198,7 @@ I decided to edit the `Home` button in the navigation bar to be the view-counter
 ```
 This is the script for fetching the view count from AWS. It basically just gets the returned value from the python script.
 
-```
+```js
 <script>
 async function fetchViewCount() {
   try {
@@ -224,14 +224,14 @@ if (document.readyState === "loading") {
 
 ### Some Solved Issues:
 - Injecting the API URL so it would **not** be directly in my GitHub repository, to accomplish this, I added it as `API_URL` in GitHub secrets and referenced it when building the project in the deploy script.
-```
+```yml
 - name: Add API URL
     run: |
       API_URL=${{ secrets.API_URL }}
       sed -i "s|__VIEW_COUNTER_URL__|$API_URL|g" src/components/Navbar.astro
 ```
 - Object might be null error, to fix this I implemented a conditional therefore bypassing the error.
-```
+```yml
     const counter = document.getElementById("view-counter");
     if (counter) {
       counter.textContent = `${data.views}`;
