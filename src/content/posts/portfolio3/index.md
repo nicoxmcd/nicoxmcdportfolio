@@ -7,8 +7,11 @@ tags: ["Project", "AWS", "Cloud Resume Challenge"]
 category: Projects
 draft: False
 ---
-## Testing 
 
+## Overview
+This section covers the final stretch of the challenge, talking about how I implemented testing to the lambda function and the various mods implemented throughout the challenge. I wanted to do as many of them as I could to get some more skills under my belt and for a well-rounded experience. I really only completed four (*1 Dev, 1 Security, 2 DevOps*), but I think they were super fun to add onto the project. I also acknowledge that it's best to stick to one type of mod to specialize in a specific aspect. Feel free to share your thoughts, for this stage of my career I want to know a tiny bit of everything, and really be very detail oriented in 1 or 2 technologies. With AI on the rise, I believe it will be useful to know a bit of everything in order to partner with AI in future projects.
+
+## Testing 
 `view_counter.py` is the Lambda function I built in the previous section. I did make some minor adjustments like specifying the `region_name` for the `dynamodb` resource and instead of using a dynamic naming technique for the `dynamodb.Table`, I hard-coded it, since this is for this project anyhow. I came across long-winded errors from the Python Unittest without these things defined, so I figured this was the best way to mitigate them.
 ```python
 dynamodb = boto3.resource("dynamodb", region_name='us-east-1')
@@ -82,7 +85,7 @@ If the lambda script is behaving as expected, it will continue onto to the end o
 ![Testing Passing](./truetest.png)
 
 ## Mods Throughout The Challenge
-These are the mods I added with their associated explanations!
+These are the mods I added with their associated explanations of where or how I implemented them.
 - **Building the Frontend**
     - *Developer Mod: Frame Job*
         - I hear you saying. *But Nicole, you used a template, why would you count it as completing the mod?* And what I have to say to that is, figuring out a complex template like Fuwari is a feat in and of itself. I did add a lot of my own pages and learned to customize the original setup. And how to navigate errors because of Astro or Typescript. So just working with these frameworks was pretty cool. So yes, I'm giving myself credit for figuring it out. 
@@ -92,11 +95,14 @@ These are the mods I added with their associated explanations!
 
 - **Building the API**
     - *DevOps Mod: Monitor Lizard*
-        - ...
+        - Monitoring is super important in DevOps, it keeps us proactive, being able to catch small changes in how services are being used, or being able to quickly react to various situations.
+        - Here is the CloudWatch dashboard I put together that monitors the Lambda function invocations, deployments, and item updates to the DynamoDB table:
+        ![CloudWatch Dashboard](./CloudWatch.png)
+        - **Fun Fact**: My fiance and I have 4 lizards!
+        ![An actual monitor lizard](./lizard.png)
     - *Security Mod: Check yo Privilege*
-        - Used [IAM Access Analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html#what-is-access-analyzer-resource-identification) to analyze current permissions provided to the OIDC to GitHub
-        
-
+        - Used [IAM Access Analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html#what-is-access-analyzer-resource-identification) to analyze organization wide unused permissions.
+        - This is to use the principal of least privilege, basically only providing exactly the permissions needed to complete the job.
 
 ## What's Next?
 After completing the challenge, I think getting more exposure into using all of the services together and how services interact with each other would be a next step. I plan to complete another certification: Developer (mostly because AWS has announced they will update the SysOps Admin to CloudOps in September), then I plan to achieve the CloudOps certification. 
