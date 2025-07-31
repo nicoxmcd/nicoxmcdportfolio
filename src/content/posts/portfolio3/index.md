@@ -102,7 +102,7 @@ These are the mods I added with their associated explanations of where or how I 
         ![An actual monitor lizard](./lizard.png)
     - *Security Mod: Check yo Privilege*
         - Used [IAM Access Analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html#what-is-access-analyzer-resource-identification) to analyze organization wide unused permissions.
-        - This is to use the principal of least privilege, basically only providing exactly the permissions needed to complete the job.
+        - This is to use the principle of least privilege, basically only providing exactly the permissions needed to complete the job.
 
 ## What's Next?
 After completing the challenge, I think getting more exposure into using all of the services together and how services interact with each other would be a next step. I plan to complete another certification: Developer (mostly because AWS has announced they will update the SysOps Admin to CloudOps in September), then I plan to achieve the CloudOps certification. 
