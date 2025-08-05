@@ -1,9 +1,9 @@
 ---
-title: ExerQ the Web Application
+title: ExerQ - AI Driven Web App
 published: 2025-05-10
 description: "Utilizing many AWS services such as Amplify, API Gateway, Lambda, DynamoDB, and Bedrock."
 image: "./exerq.png"
-tags: ["Project", "AWS"]
+tags: ["Project", "AWS", "AI"]
 category: Projects
 draft: false
 ---
