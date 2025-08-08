@@ -56,7 +56,7 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/princeton-full.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "Nicole Xiomora McDermott",
+	name: "Nicole Xiomora An",
 	bio: "DevOps & AWS Cloud Engineer NJ, USA",
 	links: [
 		{
@@ -72,7 +72,7 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "Email",
 			icon: "fa6-regular:envelope",
-			url: "mailto:nicolexmcdermott@proton.me",
+			url: "mailto:nicolexan@proton.me",
 		},
 	],
 };
